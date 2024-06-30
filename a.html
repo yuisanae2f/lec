@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+// 이상한 정수를 받아서
+// 년, 월, 일, 분, 초를 계산할 수 있게 만들어 둔 무언가
+class unixReader {
+    // 그 이상한 정수 넣으시면 됨
+    constructor(unix) {
+        // 넣어 놓은 이상한 정수 다시 빼 가시면 됨
+        this.NUMBER = unix;
+
+        // 날짜 계산기
+        // 이 계산기 한 번 만드는 데 시간 좀 걸림
+        // 그래서 한 번만 쓰고 싶음
+        const date = new Date(unix * 1000);
+        
+        this.YEAR = date.getFullYear();
+        this.MONTH = String(date.getMonth() + 1).padStart(2, '0');
+        this.DAY = String(date.getDate()).padStart(2, '0');
+        this.HOUR = String(date.getHours()).padStart(2, '0');
+        this.MIN = String(date.getMinutes()).padStart(2, '0');
+        this.SEC = String(date.getSeconds()).padStart(2, '0');
+    }
+}
+
+</script>
+</html>
